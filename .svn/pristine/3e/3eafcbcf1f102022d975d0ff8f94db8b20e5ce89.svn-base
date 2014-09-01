@@ -1,0 +1,78 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class MainFrame extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6609680027612102654L;
+	private JPanel contentPane;
+	private final JPanel centerPanel = new JPanel();
+	private final JPanel northPanel = new JPanel();
+	private final JLabel northLabel = new JLabel("New label");
+	private final JButton northButton = new JButton("Say Hello");
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainFrame frame = new MainFrame();
+					frame.start();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainFrame() {
+		initGUI();
+	}
+	private void initGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		centerPanel.setBackground(Color.ORANGE);
+		
+		contentPane.add(centerPanel, BorderLayout.CENTER);
+		northPanel.setBackground(Color.BLACK);
+		
+		contentPane.add(northPanel, BorderLayout.NORTH);
+		northLabel.setForeground(Color.WHITE);
+		
+		northPanel.add(northLabel);
+		northButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("northButton is clicked");
+				northLabel.setText("Aloha!");
+			}
+		});
+		
+		northPanel.add(northButton);
+	}
+
+	private void start(){
+		setVisible(true);
+	}
+}
