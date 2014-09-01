@@ -24,7 +24,9 @@ public class Rectangle extends AShape {
 
 	@Override
 	public void paint(Graphics g) {
-		// Paint the rectangle at the specified location with the specified color and size
+		/**
+		 * Paint the rectangle at the specified location with the specified color and size
+		 */
 		Point loc = super.getLocation();
 		g.setColor(super.getColor());
 		g.drawRect(loc.x, loc.y, size.x, size.y);

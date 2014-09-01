@@ -10,7 +10,7 @@ import java.awt.Point;
  * A composite shape 
  */
 public class CompositeShape extends AShape {
-	// contains two AShape objects
+
 /**
  * <pre>
  *           1..1     0..*
@@ -56,7 +56,9 @@ this.aShape = new HashSet<AShape>();
 
 	@Override
 	public void paint(Graphics g) {
-		// Paint each of the two AShape object
+		/**
+		 * Paint each of the two AShape objects
+		 */
 		shapeA.paint(g);
 		shapeB.paint(g);
 	}

@@ -8,7 +8,9 @@ import java.awt.Point;
  * A circle shape
  */
 public class Circle extends AShape {
-	// The radius of the circle
+	/**
+	 * The radius of circle
+	 */
 	private int radius;
 
 	/**
@@ -24,7 +26,9 @@ public class Circle extends AShape {
 
 	@Override
 	public void paint(Graphics g) {
-		// Paint the circle at the specified location with the specified radius and color
+		/**
+		 * Paint the circle at the specified location with the specified radius and color
+		 */
 		Point loc = super.getLocation();
 		g.setColor(super.getColor());
 		g.drawOval(loc.x, loc.y, radius, radius);

@@ -26,11 +26,15 @@ import shape.CompositeShape;
 import shape.Rectangle;
 
 public class MainFrame extends JFrame {
-	// All the shapes to be painted
+	/**
+	 * shapesToPaint contains all the shapes to be painted
+	 */
 	private ArrayList<AShape> shapesToPaint = new ArrayList<AShape>() {
 		private static final long serialVersionUID = -5115571127496690007L;
 	{
-		// Initialize a circle to paint
+		/**
+		 * Initialize a circle to paint
+		 */
 		add(new Circle(new Point(150, 150), 20, Color.BLUE));
 	}};
 	private static final long serialVersionUID = 6609680027612102654L;
@@ -43,10 +47,22 @@ public class MainFrame extends JFrame {
 		* @param g The Graphics object to paint on.
 		**/
 		public void paintComponent(Graphics g) {
-		    super.paintComponent(g);   // Do everything normally done first, e.g. clear the screen.
-		    g.setColor(Color.RED);  // Set the color to use when drawing
-		    g.fillOval(75, 100, 20, 40);  // paint a filled 20x40 red ellipse whose upper left corner is at (75, 100)
-		    // Paint all the shapes
+			/**
+			 * Do everything normally done first, e.g. clear the screen.
+			 */
+		    super.paintComponent(g);   
+		    
+			/**
+			 * Set the color to use when drawing
+			 */
+		    g.setColor(Color.RED);
+			/**
+			 * Paint a filled 20x40 red ellipse whose upper left corner is at (75, 100)
+			 */
+		    g.fillOval(75, 100, 20, 40);  
+			/**
+			 * Paint all shapes
+			 */
 		    for(AShape shape: shapesToPaint) {
 		    	shape.paint(g);
 		    }
@@ -104,9 +120,13 @@ public class MainFrame extends JFrame {
 		northPanel.add(northLabel);
 		northButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Get the input text
+				/**
+				 * Get the input text
+				 */
 				String inputText = northTextField.getText();
-				// Set the label the same as the input text
+				/**
+				 * Set the label to the same as the input text
+				 */
 				northLabel.setText(inputText);
 			}
 		});
@@ -125,7 +145,9 @@ public class MainFrame extends JFrame {
 		});
 		btnShowCompositeShape.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Build Olympic rings
+				/**
+				 * Building the Olympic rings
+				 */
 				AShape blueCircle = new Circle(new Point(0,0), 30, Color.BLUE);
 				AShape blackCircle = new Circle(new Point(40,0), 30, Color.BLACK);
 				AShape combo = new CompositeShape(blueCircle, blackCircle);
@@ -139,7 +161,9 @@ public class MainFrame extends JFrame {
 				AShape greenCircle = new Circle(new Point(60,15), 30, Color.GREEN);
 				AShape combo4 = new CompositeShape(greenCircle, combo3);
 				
-				// Add the olympic rings to the shapes to paint
+				/**
+				 * Add Olympic rings to the shapes and paint them on the panel
+				 */
 				shapesToPaint.add(combo4);
 				centerPanel.repaint();
 			}

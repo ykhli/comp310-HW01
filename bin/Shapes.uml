@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_eD1IgDF-EeSCi4Q5FKcbkA" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_eD1IgTF-EeSCi4Q5FKcbkA" source="codegen">
         <details xmi:id="_eD1IgjF-EeSCi4Q5FKcbkA" key="codegenDirectory" value="/HW01/src"/>
-        <details xmi:id="_eLq14DF-EeSCi4Q5FKcbkA" key="AssociatedSourceCode" value="/HW01/src/view/MainFrame.java;2087959519/1;/HW01/src/shape/AShape.java;3489844103/1;/HW01/src/shape/Circle.java;2392720067/1;/HW01/src/shape/Rectangle.java;932304934/1;/HW01/src/shape/Oval.java;1066266204/1;/comp310-HW01/src/shape/CompositeShape.java;2704540256/1;"/>
+        <details xmi:id="_eLq14DF-EeSCi4Q5FKcbkA" key="AssociatedSourceCode" value="/HW01/src/view/MainFrame.java;2087959519/1;/HW01/src/shape/AShape.java;3489844103/1;/HW01/src/shape/Circle.java;2392720067/1;/HW01/src/shape/Rectangle.java;932304934/1;/HW01/src/shape/Oval.java;1066266204/1;/comp310-HW01/src/shape/CompositeShape.java;2308362484/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_YPmP4DIJEeS5fbfSURRPSg" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_YPmP4TIJEeS5fbfSURRPSg" source="com.yattasolutions.codegen.reverse">

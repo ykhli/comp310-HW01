@@ -8,9 +8,13 @@ import java.awt.Point;
  * Abstract class of shape
  */
 public abstract class AShape {
-	// The location of the shape
+	/**
+	 * Location of the shape
+	 */
 	private Point location;
-	// The color of the shape
+	/**
+	 * Color of the shape
+	 */
 	private Color color;
 
 	/**

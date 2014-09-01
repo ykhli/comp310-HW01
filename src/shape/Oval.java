@@ -8,7 +8,9 @@ import java.awt.Point;
  * An oval shape
  */
 public class Oval extends AShape{
-	// x is width, y is height
+	/**
+	 * Point(x,y), in which x is defined as width, and y as height
+	 */
 	private Point size;
 	
 	/**
@@ -24,7 +26,9 @@ public class Oval extends AShape{
 
 	@Override
 	public void paint(Graphics g) {
-		// Paint the oval at the specified location with the specified color and size
+		/**
+		 * Paint the oval at the specified location with the specified color and size
+		 */
 		Point loc = super.getLocation();
 		g.setColor(super.getColor());
 		g.drawOval(loc.x, loc.y, size.x, size.y);
