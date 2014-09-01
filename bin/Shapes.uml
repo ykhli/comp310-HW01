@@ -4,13 +4,13 @@
     <eAnnotations xmi:id="_eD1IgDF-EeSCi4Q5FKcbkA" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_eD1IgTF-EeSCi4Q5FKcbkA" source="codegen">
         <details xmi:id="_eD1IgjF-EeSCi4Q5FKcbkA" key="codegenDirectory" value="/HW01/src"/>
-        <details xmi:id="_eLq14DF-EeSCi4Q5FKcbkA" key="AssociatedSourceCode" value="/HW01/src/view/MainFrame.java;464073264/1;/HW01/src/shape/AShape.java;1981597438/1;/HW01/src/shape/Circle.java;855705977/1;/HW01/src/shape/Rectangle.java;2231597106/1;/HW01/src/shape/Oval.java;2033515058/1;/comp310-HW01/src/shape/CompositeShape.java;3630179038/1;"/>
+        <details xmi:id="_eLq14DF-EeSCi4Q5FKcbkA" key="AssociatedSourceCode" value="/HW01/src/view/MainFrame.java;2087959519/1;/HW01/src/shape/AShape.java;3489844103/1;/HW01/src/shape/Circle.java;2392720067/1;/HW01/src/shape/Rectangle.java;932304934/1;/HW01/src/shape/Oval.java;1066266204/1;/comp310-HW01/src/shape/CompositeShape.java;2704540256/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_YPmP4DIJEeS5fbfSURRPSg" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_YPmP4TIJEeS5fbfSURRPSg" source="com.yattasolutions.codegen.reverse">
-          <details xmi:id="_YPmP4jIJEeS5fbfSURRPSg" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerNewFiles" value="true"/>
-          <details xmi:id="_YPm28DIJEeS5fbfSURRPSg" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerChangedFiles" value="true"/>
-          <details xmi:id="_YPm28TIJEeS5fbfSURRPSg" key="com.yattasolutions.codegen.reverse.roundtrip.RemoveDeletedFiles" value="true"/>
+          <details xmi:id="_VcTOkDIZEeSuROfQnRLojw" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerNewFiles" value="true"/>
+          <details xmi:id="_VcTOkTIZEeSuROfQnRLojw" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerChangedFiles" value="true"/>
+          <details xmi:id="_VcTOkjIZEeSuROfQnRLojw" key="com.yattasolutions.codegen.reverse.roundtrip.RemoveDeletedFiles" value="true"/>
         </contents>
       </contents>
     </eAnnotations>
@@ -55,6 +55,8 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_4tsGIDH5EeSuROfQnRLojw" name="util">
         <packagedElement xmi:type="uml:Class" xmi:id="_4uwdIDH5EeSuROfQnRLojw" name="ArrayList"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_jDOacDIdEeSuROfQnRLojw" name="HashSet"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_jDb10DIdEeSuROfQnRLojw" name="Set"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_eJMwsDF-EeSCi4Q5FKcbkA" name="javax">
@@ -226,6 +228,10 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_i7mIsDF-EeSCi4Q5FKcbkA" name="shape">
       <packagedElement xmi:type="uml:Class" xmi:id="_hxYYUDF-EeSCi4Q5FKcbkA" name="AShape" isAbstract="true">
         <ownedAttribute xmi:id="_SHfYsTGGEeSCi4Q5FKcbkA" name="location" visibility="public" type="_SywjQDGGEeSCi4Q5FKcbkA" isReadOnly="true" association="_SHgm0DGGEeSCi4Q5FKcbkA"/>
+        <ownedAttribute xmi:id="_QFgzQDIdEeSuROfQnRLojw" name="compositeShape" type="_4uLOUDH5EeSuROfQnRLojw" association="_QFgMMDIdEeSuROfQnRLojw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QFgzQTIdEeSuROfQnRLojw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QFgzQjIdEeSuROfQnRLojw" value="1"/>
+        </ownedAttribute>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_bTa8wDGGEeSCi4Q5FKcbkA" name="AShape" specification="_bTZuoDGGEeSCi4Q5FKcbkA">
           <ownedParameter xmi:id="_bTa8wTGGEeSCi4Q5FKcbkA" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_bTa8wjGGEeSCi4Q5FKcbkA" type="_hxYYUDF-EeSCi4Q5FKcbkA" direction="return">
@@ -373,14 +379,24 @@
             <details xmi:id="_4uNqkjH5EeSuROfQnRLojw" key="codegenDirectory" value="/comp310-HW01/src"/>
           </contents>
         </eAnnotations>
+        <ownedComment xmi:id="_U8lMsDIZEeSuROfQnRLojw">
+          <body>A composite shape</body>
+        </ownedComment>
         <generalization xmi:id="_4u_GoTH5EeSuROfQnRLojw" general="_hxYYUDF-EeSCi4Q5FKcbkA"/>
         <ownedAttribute xmi:id="_4vEmMDH5EeSuROfQnRLojw" name="shapeA" visibility="private" type="_hxYYUDF-EeSCi4Q5FKcbkA" association="_Yzu3sTIJEeS5fbfSURRPSg"/>
         <ownedAttribute xmi:id="_YzjRgDIJEeS5fbfSURRPSg" name="shapeB" visibility="private" type="_hxYYUDF-EeSCi4Q5FKcbkA" association="_YztpkDIJEeS5fbfSURRPSg"/>
+        <ownedAttribute xmi:id="_QFgzQzIdEeSuROfQnRLojw" name="aShape" type="_hxYYUDF-EeSCi4Q5FKcbkA" aggregation="composite" association="_QFgMMDIdEeSuROfQnRLojw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QFhaUDIdEeSuROfQnRLojw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QFhaUTIdEeSuROfQnRLojw" value="*"/>
+        </ownedAttribute>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vKFwDH5EeSuROfQnRLojw" name="CompositeShape" specification="_4u1VoDH5EeSuROfQnRLojw">
-          <ownedParameter xmi:id="_Yzm74DIJEeS5fbfSURRPSg" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
-          <ownedParameter xmi:id="_Yzm74TIJEeS5fbfSURRPSg" type="_4uLOUDH5EeSuROfQnRLojw" direction="return"/>
-          <ownedParameter xmi:id="_Yzm74jIJEeS5fbfSURRPSg" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
-          <ownedParameter xmi:id="_Yzm74zIJEeS5fbfSURRPSg" name="shapeB" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
+          <ownedParameter xmi:id="_U8j-kDIZEeSuROfQnRLojw" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
+          <ownedParameter xmi:id="_U8j-kTIZEeSuROfQnRLojw" type="_4uLOUDH5EeSuROfQnRLojw" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_U8j-kjIZEeSuROfQnRLojw" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
+          <ownedParameter xmi:id="_U8j-kzIZEeSuROfQnRLojw" name="shapeA" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
+          <ownedParameter xmi:id="_U8j-lDIZEeSuROfQnRLojw" name="shapeB" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
           <language>java</language>
           <body>super(location, color);
 		this.shapeA = shapeA;
@@ -397,7 +413,9 @@
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Yzni8DIJEeS5fbfSURRPSg" name="CompositeShape" specification="_YzbVsDIJEeS5fbfSURRPSg">
           <ownedParameter xmi:id="_Yzni8TIJEeS5fbfSURRPSg" name="shapeA" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_Yzni8jIJEeS5fbfSURRPSg" name="shapeB" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
-          <ownedParameter xmi:id="_Yzni8zIJEeS5fbfSURRPSg" type="_4uLOUDH5EeSuROfQnRLojw" direction="return"/>
+          <ownedParameter xmi:id="_Yzni8zIJEeS5fbfSURRPSg" type="_4uLOUDH5EeSuROfQnRLojw" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>super(null, null);
 		this.shapeA = shapeA;
@@ -408,6 +426,13 @@
           <eAnnotations xmi:id="_4u4Y8DH5EeSuROfQnRLojw" source="http://www.eclipse.org/uml2/2.0.0/UML">
             <details xmi:id="_4u5AADH5EeSuROfQnRLojw" key="create"/>
           </eAnnotations>
+          <ownedComment xmi:id="_U8lMsTIZEeSuROfQnRLojw">
+            <body>Constructor
+	 * @param location the location of the shape
+	 * @param color the color of the shape
+	 * @param shapeA the first AShape object
+	 * @param shapeB the second AShape object</body>
+          </ownedComment>
           <ownedParameter xmi:id="_4u18sDH5EeSuROfQnRLojw" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_4u5AATH5EeSuROfQnRLojw" type="_4uLOUDH5EeSuROfQnRLojw" direction="return"/>
           <ownedParameter xmi:id="_Ag35ITH7EeSuROfQnRLojw" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
@@ -421,6 +446,11 @@
           <eAnnotations xmi:id="_Yzb8wDIJEeS5fbfSURRPSg" source="http://www.eclipse.org/uml2/2.0.0/UML">
             <details xmi:id="_Yzb8wTIJEeS5fbfSURRPSg" key="create"/>
           </eAnnotations>
+          <ownedComment xmi:id="_U8lMsjIZEeSuROfQnRLojw">
+            <body>Constructor
+	 * @param shapeA the first AShape object
+	 * @param shapeB the second AShape object</body>
+          </ownedComment>
           <ownedParameter xmi:id="_YzbVsTIJEeS5fbfSURRPSg" name="shapeA" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_YzbVsjIJEeS5fbfSURRPSg" name="shapeB" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_YzbVszIJEeS5fbfSURRPSg" type="_4uLOUDH5EeSuROfQnRLojw" direction="return"/>
@@ -431,8 +461,12 @@
         <ownedEnd xmi:id="_YztpkTIJEeS5fbfSURRPSg" name="" type="_4uLOUDH5EeSuROfQnRLojw" association="_YztpkDIJEeS5fbfSURRPSg"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_Yzu3sTIJEeS5fbfSURRPSg" name="" memberEnd="_Yzu3sjIJEeS5fbfSURRPSg _4vEmMDH5EeSuROfQnRLojw">
-        <ownedEnd xmi:id="_Yzu3sjIJEeS5fbfSURRPSg" name="" type="_4uLOUDH5EeSuROfQnRLojw" association="_Yzu3sTIJEeS5fbfSURRPSg"/>
+        <ownedEnd xmi:id="_Yzu3sjIJEeS5fbfSURRPSg" name="" type="_4uLOUDH5EeSuROfQnRLojw" association="_Yzu3sTIJEeS5fbfSURRPSg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yTqwkDIbEeSuROfQnRLojw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yTqwkTIbEeSuROfQnRLojw" value="*"/>
+        </ownedEnd>
       </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_QFgMMDIdEeSuROfQnRLojw" name="" memberEnd="_QFgzQDIdEeSuROfQnRLojw _QFgzQzIdEeSuROfQnRLojw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_1Y8z0DGJEeSCi4Q5FKcbkA" name="shape"/>
     <profileApplication xmi:id="_eD1vkDF-EeSCi4Q5FKcbkA">
@@ -497,7 +531,6 @@
   <UMLLabProfile:Reference xmi:id="_XBdUIDGNEeSCi4Q5FKcbkA" base_Element="_XBctEDGNEeSCi4Q5FKcbkA"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_xr-O8TGNEeSCi4Q5FKcbkA" base_Element="_xr-O8DGNEeSCi4Q5FKcbkA"/>
   <UMLLabProfile:Reference xmi:id="_xr_dEjGNEeSCi4Q5FKcbkA" base_Element="_xr_dEDGNEeSCi4Q5FKcbkA"/>
-  <UMLLabProfile:Array xmi:id="_AWydkDGOEeSCi4Q5FKcbkA" dimensions="1" base_Element="_eJUFcTF-EeSCi4Q5FKcbkA"/>
   <UMLLabProfile:Reference xmi:id="_4uzgcDH5EeSuROfQnRLojw" base_Element="_4uwdIDH5EeSuROfQnRLojw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_4u9RcDH5EeSuROfQnRLojw" base_Element="_4u8DUDH5EeSuROfQnRLojw"/>
   <UMLLabProfile:Annotations xmi:id="_4u-fkDH5EeSuROfQnRLojw" base_Element="_4u8DUDH5EeSuROfQnRLojw">
@@ -508,4 +541,6 @@
   <UMLLabProfile:LegacyStyledElement xmi:id="_Yzj4kDIJEeS5fbfSURRPSg" base_Element="_YzjRgDIJEeS5fbfSURRPSg"/>
   <UMLLabProfile:Reference xmi:id="_Yzu3sDIJEeS5fbfSURRPSg" base_Element="_YztpkDIJEeS5fbfSURRPSg"/>
   <UMLLabProfile:Reference xmi:id="_YzwF0DIJEeS5fbfSURRPSg" base_Element="_Yzu3sTIJEeS5fbfSURRPSg"/>
+  <UMLLabProfile:Reference xmi:id="_jDVIIDIdEeSuROfQnRLojw" base_Element="_jDOacDIdEeSuROfQnRLojw"/>
+  <UMLLabProfile:Reference xmi:id="_jDdD8DIdEeSuROfQnRLojw" base_Element="_jDb10DIdEeSuROfQnRLojw"/>
 </xmi:XMI>

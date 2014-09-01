@@ -1,15 +1,32 @@
 package shape;
+import java.util.HashSet;
+import java.util.Set;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.util.ArrayList;
 
 /**
  * A composite shape 
  */
 public class CompositeShape extends AShape {
 	// contains two AShape objects
+/**
+ * <pre>
+ *           1..1     0..*
+ * CompositeShape ------------------------- AShape
+ *           compositeShape        &gt;       aShape
+ * </pre>
+ */
+private Set<AShape> aShape;
+
+public Set<AShape> getAShape() {
+   if (this.aShape == null) {
+this.aShape = new HashSet<AShape>();
+   }
+   return this.aShape;
+}
+
 	private AShape shapeA;
 	private AShape shapeB;
 
