@@ -27,9 +27,7 @@ import shape.Rectangle;
 
 public class MainFrame extends JFrame {
 
-	private ArrayList<AShape> shapesToPaint = new ArrayList<AShape>() {/**
-		 * 
-		 */
+	private ArrayList<AShape> shapesToPaint = new ArrayList<AShape>() {
 		private static final long serialVersionUID = -5115571127496690007L;
 
 	{
@@ -59,7 +57,7 @@ public class MainFrame extends JFrame {
 	private final JButton northButton = new JButton("Click");
 	private final JTextField northTextField = new JTextField();
 	private final JPanel southPanel = new JPanel();
-	private final JButton southButton = new JButton("Change to Rectangle");
+	private final JButton btnChangeRect = new JButton("Change to Rectangle");
 	private final JButton btnShowCompositeShape = new JButton("Show Composite Shape");
 
 	/**
@@ -115,7 +113,7 @@ public class MainFrame extends JFrame {
 		southPanel.setBackground(Color.BLACK);
 		
 		contentPane.add(southPanel, BorderLayout.SOUTH);
-		southButton.addActionListener(new ActionListener() {
+		btnChangeRect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AShape someShape = new Rectangle(new Point(150, 150), new Point(20, 30), Color.CYAN);
 				shapesToPaint.set(0, someShape);
@@ -127,25 +125,24 @@ public class MainFrame extends JFrame {
 				
 				AShape blueCircle = new Circle(new Point(0,0), 30, Color.BLUE);
 				AShape blackCircle = new Circle(new Point(40,0), 30, Color.BLACK);
+				AShape combo = new CompositeShape(blueCircle, blackCircle);
+				
 				AShape redCircle = new Circle(new Point(80,0), 30, Color.RED);
+				AShape combo2 = new CompositeShape(redCircle, combo);
+				
 				AShape yellowCircle = new Circle(new Point(20,15), 30, Color.YELLOW);
+				AShape combo3 = new CompositeShape(yellowCircle, combo2);
+				
 				AShape greenCircle = new Circle(new Point(60,15), 30, Color.GREEN);
-				CompositeShape shapes = new CompositeShape(null, null);
+				AShape combo4 = new CompositeShape(greenCircle, combo3);
 				
-				shapes.addShape(blueCircle);
-				shapes.addShape(blackCircle);
-				shapes.addShape(redCircle);
-				shapes.addShape(yellowCircle);
-				shapes.addShape(greenCircle);
-				
-				shapesToPaint.add(shapes);
+				shapesToPaint.add(combo4);
 				centerPanel.repaint();
 			}
 		});
 		
 		southPanel.add(btnShowCompositeShape);
-		
-		southPanel.add(southButton);
+		southPanel.add(btnChangeRect);
 	}
 
 	private void start(){

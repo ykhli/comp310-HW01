@@ -6,27 +6,24 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 public class CompositeShape extends AShape {
-	private ArrayList<AShape> shapeList;
-	public CompositeShape(Point location, Color color) {
+	private AShape shapeA;
+	private AShape shapeB;
+
+	public CompositeShape(Point location, Color color, AShape shapeA, AShape shapeB) {
 		super(location, color);
-		shapeList = new ArrayList<>();
+		this.shapeA = shapeA;
+		this.shapeB = shapeB;
 	}
 
-	
-	
-	public void addShape(AShape shape) {
-		shapeList.add(shape);
-	}
-	
-	public void removeShape(AShape shape) {
-		shapeList.remove(shapeList.size()-1);
+	public CompositeShape(AShape shapeA, AShape shapeB) {
+		super(null, null);
+		this.shapeA = shapeA;
+		this.shapeB = shapeB;
 	}
 
 	@Override
 	public void paint(Graphics g) {
-		for(AShape shape: shapeList){
-			shape.paint(g);			
-		}		
+		shapeA.paint(g);
+		shapeB.paint(g);
 	}
-	
 }
