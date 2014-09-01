@@ -16,16 +16,25 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.JTextField;
 
 import shape.AShape;
 import shape.Circle;
+import shape.CompositeShape;
 import shape.Rectangle;
 
 public class MainFrame extends JFrame {
 
-	private AShape someShape = new Circle(new Point(150, 150), 20);
+	private ArrayList<AShape> shapesToPaint = new ArrayList<AShape>() {/**
+		 * 
+		 */
+		private static final long serialVersionUID = -5115571127496690007L;
+
+	{
+		add(new Circle(new Point(150, 150), 20, Color.BLUE));
+	}};
 	private static final long serialVersionUID = 6609680027612102654L;
 	private JPanel contentPane;
 	private final JPanel centerPanel = new JPanel(){
@@ -40,7 +49,9 @@ public class MainFrame extends JFrame {
 		    g.setColor(Color.RED);  // Set the color to use when drawing
 		    g.fillOval(75, 100, 20, 40);  // paint a filled 20x40 red ellipse whose upper left corner is at (75, 100)
 		    
-		    someShape.paint(g);
+		    for(AShape shape: shapesToPaint) {
+		    	shape.paint(g);
+		    }
 		}
 	};
 	private final JPanel northPanel = new JPanel();
@@ -49,6 +60,7 @@ public class MainFrame extends JFrame {
 	private final JTextField northTextField = new JTextField();
 	private final JPanel southPanel = new JPanel();
 	private final JButton southButton = new JButton("Change to Rectangle");
+	private final JButton btnShowCompositeShape = new JButton("Show Composite Shape");
 
 	/**
 	 * Launch the application.
@@ -105,10 +117,33 @@ public class MainFrame extends JFrame {
 		contentPane.add(southPanel, BorderLayout.SOUTH);
 		southButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				someShape = new Rectangle(new Point(150, 150), new Point(20, 30));
+				AShape someShape = new Rectangle(new Point(150, 150), new Point(20, 30), Color.CYAN);
+				shapesToPaint.set(0, someShape);
 				centerPanel.repaint();
 			}
 		});
+		btnShowCompositeShape.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				AShape blueCircle = new Circle(new Point(0,0), 30, Color.BLUE);
+				AShape blackCircle = new Circle(new Point(40,0), 30, Color.BLACK);
+				AShape redCircle = new Circle(new Point(80,0), 30, Color.RED);
+				AShape yellowCircle = new Circle(new Point(20,15), 30, Color.YELLOW);
+				AShape greenCircle = new Circle(new Point(60,15), 30, Color.GREEN);
+				CompositeShape shapes = new CompositeShape(null, null);
+				
+				shapes.addShape(blueCircle);
+				shapes.addShape(blackCircle);
+				shapes.addShape(redCircle);
+				shapes.addShape(yellowCircle);
+				shapes.addShape(greenCircle);
+				
+				shapesToPaint.add(shapes);
+				centerPanel.repaint();
+			}
+		});
+		
+		southPanel.add(btnShowCompositeShape);
 		
 		southPanel.add(southButton);
 	}

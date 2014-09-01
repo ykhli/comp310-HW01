@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_eD1IgDF-EeSCi4Q5FKcbkA" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_eD1IgTF-EeSCi4Q5FKcbkA" source="codegen">
         <details xmi:id="_eD1IgjF-EeSCi4Q5FKcbkA" key="codegenDirectory" value="/HW01/src"/>
-        <details xmi:id="_eLq14DF-EeSCi4Q5FKcbkA" key="AssociatedSourceCode" value="/HW01/src/view/MainFrame.java;464073264/1;/HW01/src/shape/AShape.java;2699475822/1;/HW01/src/shape/Circle.java;855705977/1;/HW01/src/shape/Rectangle.java;2231597106/1;/HW01/src/shape/Oval.java;2033515058/1;"/>
+        <details xmi:id="_eLq14DF-EeSCi4Q5FKcbkA" key="AssociatedSourceCode" value="/HW01/src/view/MainFrame.java;2087959519/1;/HW01/src/shape/AShape.java;2507765670/1;/HW01/src/shape/Circle.java;2392720067/1;/HW01/src/shape/Rectangle.java;932304934/1;/HW01/src/shape/Oval.java;1066266204/1;/comp310-HW01/src/shape/CompositeShape.java;328470893/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_eJKUcDF-EeSCi4Q5FKcbkA">
@@ -45,6 +45,9 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_eJrR0TF-EeSCi4Q5FKcbkA" name="Graphics"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_eJtuETF-EeSCi4Q5FKcbkA" name="Color"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_SywjQDGGEeSCi4Q5FKcbkA" name="Point"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_4tsGIDH5EeSuROfQnRLojw" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_4uwdIDH5EeSuROfQnRLojw" name="ArrayList"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_eJMwsDF-EeSCi4Q5FKcbkA" name="javax">
@@ -357,6 +360,67 @@
       <packagedElement xmi:type="uml:Association" xmi:id="_1zf6cDGMEeSCi4Q5FKcbkA" name="" memberEnd="_1zf6cTGMEeSCi4Q5FKcbkA _1zesUTGMEeSCi4Q5FKcbkA">
         <ownedEnd xmi:id="_1zf6cTGMEeSCi4Q5FKcbkA" name="" type="_pabsADGMEeSCi4Q5FKcbkA" association="_1zf6cDGMEeSCi4Q5FKcbkA"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_4uLOUDH5EeSuROfQnRLojw" name="CompositeShape">
+        <eAnnotations xmi:id="_4uNqkDH5EeSuROfQnRLojw" source="http://ns.yatta.de/umllab">
+          <contents xmi:type="ecore:EAnnotation" xmi:id="_4uNqkTH5EeSuROfQnRLojw" source="codegen">
+            <details xmi:id="_4uNqkjH5EeSuROfQnRLojw" key="codegenDirectory" value="/comp310-HW01/src"/>
+          </contents>
+        </eAnnotations>
+        <generalization xmi:id="_4u_GoTH5EeSuROfQnRLojw" general="_hxYYUDF-EeSCi4Q5FKcbkA"/>
+        <ownedAttribute xmi:id="_4vEmMDH5EeSuROfQnRLojw" name="shapeList" visibility="private" type="_4uwdIDH5EeSuROfQnRLojw" association="_4vTPsDH5EeSuROfQnRLojw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vKFwDH5EeSuROfQnRLojw" name="CompositeShape" specification="_4u1VoDH5EeSuROfQnRLojw">
+          <ownedParameter xmi:id="_Blq-ADH7EeSuROfQnRLojw" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
+          <ownedParameter xmi:id="_Blq-ATH7EeSuROfQnRLojw" type="_4uLOUDH5EeSuROfQnRLojw" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Blq-AjH7EeSuROfQnRLojw" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
+          <language>java</language>
+          <body>super(location, color);
+		shapeList = new ArrayList&lt;>();
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vMiADH5EeSuROfQnRLojw" name="addShape" specification="_4u61MDH5EeSuROfQnRLojw">
+          <ownedParameter xmi:id="_4vMiATH5EeSuROfQnRLojw" name="shape" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
+          <language>java</language>
+          <body>shapeList.add(shape);
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vNJEDH5EeSuROfQnRLojw" name="removeShape" specification="_4u7cQDH5EeSuROfQnRLojw">
+          <ownedParameter xmi:id="_4vNJETH5EeSuROfQnRLojw" name="shape" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
+          <language>java</language>
+          <body>shapeList.remove(shapeList.size()-1);
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vNwIDH5EeSuROfQnRLojw" name="paint" specification="_4u8DUDH5EeSuROfQnRLojw">
+          <ownedParameter xmi:id="_4vNwITH5EeSuROfQnRLojw" name="g" type="_eJrR0TF-EeSCi4Q5FKcbkA"/>
+          <language>java</language>
+          <body>for(AShape shape: shapeList){
+			shape.paint(g);			
+		}		
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_4u1VoDH5EeSuROfQnRLojw" name="CompositeShape" method="_4vKFwDH5EeSuROfQnRLojw">
+          <eAnnotations xmi:id="_4u4Y8DH5EeSuROfQnRLojw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_4u5AADH5EeSuROfQnRLojw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_4u18sDH5EeSuROfQnRLojw" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
+          <ownedParameter xmi:id="_4u5AATH5EeSuROfQnRLojw" type="_4uLOUDH5EeSuROfQnRLojw" direction="return"/>
+          <ownedParameter xmi:id="_Ag35ITH7EeSuROfQnRLojw" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_4u61MDH5EeSuROfQnRLojw" name="addShape" method="_4vMiADH5EeSuROfQnRLojw">
+          <ownedParameter xmi:id="_4u61MTH5EeSuROfQnRLojw" name="shape" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_4u7cQDH5EeSuROfQnRLojw" name="removeShape" method="_4vNJEDH5EeSuROfQnRLojw">
+          <ownedParameter xmi:id="_4u7cQTH5EeSuROfQnRLojw" name="shape" type="_hxYYUDF-EeSCi4Q5FKcbkA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_4u8DUDH5EeSuROfQnRLojw" name="paint" method="_4vNwIDH5EeSuROfQnRLojw">
+          <ownedParameter xmi:id="_4u8qYDH5EeSuROfQnRLojw" name="g" type="_eJrR0TF-EeSCi4Q5FKcbkA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_4vTPsDH5EeSuROfQnRLojw" name="" memberEnd="_4vTPsTH5EeSuROfQnRLojw _4vEmMDH5EeSuROfQnRLojw">
+        <ownedEnd xmi:id="_4vTPsTH5EeSuROfQnRLojw" name="" type="_4uLOUDH5EeSuROfQnRLojw" association="_4vTPsDH5EeSuROfQnRLojw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Ag2rADH7EeSuROfQnRLojw" name="Color"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_1Y8z0DGJEeSCi4Q5FKcbkA" name="shape"/>
     <profileApplication xmi:id="_eD1vkDF-EeSCi4Q5FKcbkA">
@@ -422,4 +486,13 @@
   <UMLLabProfile:LegacyStyledElement xmi:id="_xr-O8TGNEeSCi4Q5FKcbkA" base_Element="_xr-O8DGNEeSCi4Q5FKcbkA"/>
   <UMLLabProfile:Reference xmi:id="_xr_dEjGNEeSCi4Q5FKcbkA" base_Element="_xr_dEDGNEeSCi4Q5FKcbkA"/>
   <UMLLabProfile:Array xmi:id="_AWydkDGOEeSCi4Q5FKcbkA" dimensions="1" base_Element="_eJUFcTF-EeSCi4Q5FKcbkA"/>
+  <UMLLabProfile:Reference xmi:id="_4uzgcDH5EeSuROfQnRLojw" base_Element="_4uwdIDH5EeSuROfQnRLojw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_4u9RcDH5EeSuROfQnRLojw" base_Element="_4u8DUDH5EeSuROfQnRLojw"/>
+  <UMLLabProfile:Annotations xmi:id="_4u-fkDH5EeSuROfQnRLojw" base_Element="_4u8DUDH5EeSuROfQnRLojw">
+    <annotations xmi:id="_4u_GoDH5EeSuROfQnRLojw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Generics xmi:id="_4vF0UDH5EeSuROfQnRLojw" genericsValue="AShape" base_Element="_4vEmMDH5EeSuROfQnRLojw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_4vHCcDH5EeSuROfQnRLojw" base_Element="_4vEmMDH5EeSuROfQnRLojw"/>
+  <UMLLabProfile:Reference xmi:id="_4vUd0DH5EeSuROfQnRLojw" base_Element="_4vTPsDH5EeSuROfQnRLojw"/>
+  <UMLLabProfile:Reference xmi:id="_Ag35IDH7EeSuROfQnRLojw" base_Element="_Ag2rADH7EeSuROfQnRLojw"/>
 </xmi:XMI>
