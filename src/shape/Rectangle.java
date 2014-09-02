@@ -8,7 +8,9 @@ import java.awt.Point;
  * A rectangle shape
  */
 public class Rectangle extends AShape {
-	// x is width, y is height
+	/**
+	 * x is width, y is height
+	 */
 	private Point size;
 
 	/**

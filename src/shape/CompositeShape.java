@@ -16,6 +16,8 @@ public class CompositeShape extends AShape {
 	 * Constructor
 	 * @param shapeA the first AShape object
 	 * @param shapeB the second AShape object
+	 * @param location the shape's location on the frame
+	 * @param color the color of the shape
 	 */
 	public CompositeShape(Point location, Color color, AShape shapeA, AShape shapeB) {
 		super(location, color);

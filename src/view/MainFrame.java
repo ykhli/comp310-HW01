@@ -25,6 +25,15 @@ import shape.CompositeShape;
 import shape.Oval;
 import shape.Rectangle;
 
+/**
+ * 
+ * The MainFrame class controls the main frame of the application.
+ * It includes methods that listens user-controlled events, and 
+ * sets components' configuration according to the pre-defined
+ * action. 
+ *
+ */
+
 public class MainFrame extends JFrame {
 	/**
 	 * shapesToPaint contains all the shapes to be painted
@@ -38,34 +47,24 @@ public class MainFrame extends JFrame {
 	private JPanel contentPane;
 	private final JPanel centerPanel = new JPanel(){
 		private static final long serialVersionUID = -872444218515942499L;
-
 		/**
 		* Overridden paintComponent method to paint a shape in the panel.
 		* @param g The Graphics object to paint on.
 		**/
 		public void paintComponent(Graphics g) {
-			/**
-			 * Do everything normally done first, e.g. clear the screen.
-			 */
+			//Do everything normally done first, e.g. clear the screen.
 		    super.paintComponent(g);   
-		    
-			/**
-			 * Set the color to use when drawing
-			 */
+		    // Set the color to use when drawing
 		    g.setColor(Color.RED);
-			/**
-			 * Paint a filled 20x40 red ellipse whose upper left corner is at (75, 100)
-			 */
+			//Paint a filled 20x40 red ellipse whose upper left corner is at (75, 100)
 		    g.fillOval(75, 100, 20, 40);  
-			/**
-			 * Paint all shapes
-			 */
+		    //Paint all shapes
 		    shapeToPaint.paint(g);
 		}
 	};
 	private final JPanel northPanel = new JPanel();
 	private final JLabel lblInput = new JLabel("Hello");
-	private final JButton btnSetInput = new JButton("Click");
+	private final JButton btnSetInput = new JButton("Click To Change Text");
 	private final JTextField txtNorth = new JTextField();
 	private final JPanel southPanel = new JPanel();
 	private final JButton btnRectangle = new JButton("Rectangle");
@@ -74,7 +73,7 @@ public class MainFrame extends JFrame {
 	private final JButton btnOval = new JButton("Oval");
 	private final JTextField txtPosition = new JTextField();
 	private final JLabel lblCurrentPosition = new JLabel(String.format("(%d, %d)", shapePosition.x, shapePosition.y));
-	private final JButton btnSetPosition = new JButton("Set Position");
+	private final JButton btnSetPosition = new JButton("Set Shapes Position");
 
 	/**
 	 * Launch the application.
@@ -98,6 +97,10 @@ public class MainFrame extends JFrame {
 	public MainFrame() {
 		initGUI();
 	}
+	
+	/**
+	 * Initialization function
+	 */
 	private void initGUI() {
 		txtPosition.setText("e.g. \"20 30\"");
 		txtPosition.setColumns(10);
@@ -135,6 +138,7 @@ public class MainFrame extends JFrame {
 					// If the input position is valid
 					lblCurrentPosition.setText(String.format("(%d, %d)", shapePosition.x, shapePosition.y));
 				}
+				btnFiveRings.doClick();
 			}
 		});
 		
@@ -149,13 +153,9 @@ public class MainFrame extends JFrame {
 		northPanel.add(lblInput);
 		btnSetInput.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/**
-				 * Get the input text
-				 */
+				//Get the input text
 				String inputText = txtNorth.getText();
-				/**
-				 * Set the label to the same as the input text
-				 */
+				//Set the label to the same as the input text
 				lblInput.setText(inputText);
 			}
 		});
@@ -179,9 +179,8 @@ public class MainFrame extends JFrame {
 				// The radius of each ring
 				int radius = 30;
 				
-				/**
-				 * Building the Olympic rings
-				 */
+
+				 //Building the Olympic rings
 				AShape blueCircle = new Circle(base, radius, Color.BLUE);
 				AShape blackCircle = new Circle(new Point(base.x + 40, base.y), radius, Color.BLACK);
 				AShape combo = new CompositeShape(blueCircle, blackCircle);
@@ -195,9 +194,7 @@ public class MainFrame extends JFrame {
 				AShape greenCircle = new Circle(new Point(base.x + 60, base.y + 15), radius, Color.GREEN);
 				AShape combo4 = new CompositeShape(greenCircle, combo3);
 				
-				/**
-				 * Add Olympic rings to the shapes and paint them on the panel
-				 */
+				//Add Olympic rings to the shapes and paint them on the panel
 				shapeToPaint = combo4;
 				centerPanel.repaint();
 			}
@@ -224,7 +221,10 @@ public class MainFrame extends JFrame {
 		
 		southPanel.add(btnOval);
 	}
-
+	
+	/**
+	 * Frame startup function
+	 */
 	private void start(){
 		setVisible(true);
 	}

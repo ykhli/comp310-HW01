@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_eD1IgDF-EeSCi4Q5FKcbkA" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_eD1IgTF-EeSCi4Q5FKcbkA" source="codegen">
         <details xmi:id="_eD1IgjF-EeSCi4Q5FKcbkA" key="codegenDirectory" value="/HW01/src"/>
-        <details xmi:id="_eLq14DF-EeSCi4Q5FKcbkA" key="AssociatedSourceCode" value="/comp310-HW01/src/shape/CompositeShape.java;4039690953/1;/comp310-HW01/src/shape/AShape.java;2623576234/1;/comp310-HW01/src/shape/Circle.java;421306265/1;/comp310-HW01/src/shape/Oval.java;798151530/1;/comp310-HW01/src/shape/Rectangle.java;1121367816/1;/comp310-HW01/src/view/MainFrame.java;2860175710/1;"/>
+        <details xmi:id="_eLq14DF-EeSCi4Q5FKcbkA" key="AssociatedSourceCode" value="/comp310-HW01/src/shape/CompositeShape.java;2800789925/1;/comp310-HW01/src/shape/AShape.java;2623576234/1;/comp310-HW01/src/shape/Circle.java;421306265/1;/comp310-HW01/src/shape/Oval.java;798151530/1;/comp310-HW01/src/shape/Rectangle.java;1983570988/1;/comp310-HW01/src/view/MainFrame.java;2774413364/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_YPmP4DIJEeS5fbfSURRPSg" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_YPmP4TIJEeS5fbfSURRPSg" source="com.yattasolutions.codegen.reverse">
@@ -78,6 +78,14 @@
             <details xmi:id="_yVBJcjLhEeS0IIZdYLJbDw" key="codegenDirectory" value="/comp310-HW01/src"/>
           </contents>
         </eAnnotations>
+        <ownedComment xmi:id="_L8x3sDLrEeS7BJVD35WQmg">
+          <body>
+The MainFrame class controls the main frame of the application.
+It includes methods that listens user-controlled events, and 
+sets components' configuration according to the pre-defined
+action. 
+ *</body>
+        </ownedComment>
         <generalization xmi:id="_yVlxMDLhEeS0IIZdYLJbDw" general="_eJr44TF-EeSCi4Q5FKcbkA"/>
         <ownedAttribute xmi:id="_yVo0gDLhEeS0IIZdYLJbDw" name="shapeToPaint" visibility="private" type="_1csX8DLUEeSTYuO-F-ErDA" association="_yV6hUDLhEeS0IIZdYLJbDw">
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVpbkDLhEeS0IIZdYLJbDw" value="new Circle(new Point(150, 150), 20, Color.BLUE)"/>
@@ -91,7 +99,7 @@
         </ownedAttribute>
         <ownedAttribute xmi:id="_yVqpszLhEeS0IIZdYLJbDw" name="contentPane" visibility="private" type="_eJsf8TF-EeSCi4Q5FKcbkA" association="_yV89kDLhEeS0IIZdYLJbDw"/>
         <ownedAttribute xmi:id="_yVrQwTLhEeS0IIZdYLJbDw" name="centerPanel" visibility="private" isLeaf="true" type="_eJsf8TF-EeSCi4Q5FKcbkA" isReadOnly="true" association="_yV89kzLhEeS0IIZdYLJbDw">
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVrQwjLhEeS0IIZdYLJbDw" value="new JPanel(){&#xA;&#x9;&#x9;private static final long serialVersionUID = -872444218515942499L;&#xA;&#xA;&#x9;&#x9;/**&#xA;&#x9;&#x9;* Overridden paintComponent method to paint a shape in the panel.&#xA;&#x9;&#x9;* @param g The Graphics object to paint on.&#xA;&#x9;&#x9;**/&#xA;&#x9;&#x9;public void paintComponent(Graphics g) {&#xA;&#x9;&#x9;&#x9;/**&#xA;&#x9;&#x9;&#x9; * Do everything normally done first, e.g. clear the screen.&#xA;&#x9;&#x9;&#x9; */&#xA;&#x9;&#x9;    super.paintComponent(g);   &#xA;&#x9;&#x9;    &#xA;&#x9;&#x9;&#x9;/**&#xA;&#x9;&#x9;&#x9; * Set the color to use when drawing&#xA;&#x9;&#x9;&#x9; */&#xA;&#x9;&#x9;    g.setColor(Color.RED);&#xA;&#x9;&#x9;&#x9;/**&#xA;&#x9;&#x9;&#x9; * Paint a filled 20x40 red ellipse whose upper left corner is at (75, 100)&#xA;&#x9;&#x9;&#x9; */&#xA;&#x9;&#x9;    g.fillOval(75, 100, 20, 40);  &#xA;&#x9;&#x9;&#x9;/**&#xA;&#x9;&#x9;&#x9; * Paint all shapes&#xA;&#x9;&#x9;&#x9; */&#xA;&#x9;&#x9;    shapeToPaint.paint(g);&#xA;&#x9;&#x9;}&#xA;&#x9;}"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVrQwjLhEeS0IIZdYLJbDw" value="new JPanel(){&#xA;&#x9;&#x9;private static final long serialVersionUID = -872444218515942499L;&#xA;&#x9;&#x9;/**&#xA;&#x9;&#x9;* Overridden paintComponent method to paint a shape in the panel.&#xA;&#x9;&#x9;* @param g The Graphics object to paint on.&#xA;&#x9;&#x9;**/&#xA;&#x9;&#x9;public void paintComponent(Graphics g) {&#xA;&#x9;&#x9;&#x9;//Do everything normally done first, e.g. clear the screen.&#xA;&#x9;&#x9;    super.paintComponent(g);   &#xA;&#x9;&#x9;    // Set the color to use when drawing&#xA;&#x9;&#x9;    g.setColor(Color.RED);&#xA;&#x9;&#x9;&#x9;//Paint a filled 20x40 red ellipse whose upper left corner is at (75, 100)&#xA;&#x9;&#x9;    g.fillOval(75, 100, 20, 40);  &#xA;&#x9;&#x9;    //Paint all shapes&#xA;&#x9;&#x9;    shapeToPaint.paint(g);&#xA;&#x9;&#x9;}&#xA;&#x9;}"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_yVr30TLhEeS0IIZdYLJbDw" name="northPanel" visibility="private" isLeaf="true" type="_eJsf8TF-EeSCi4Q5FKcbkA" isReadOnly="true" association="_yV9koTLhEeS0IIZdYLJbDw">
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVr30jLhEeS0IIZdYLJbDw" value="new JPanel()"/>
@@ -100,7 +108,7 @@
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVse4DLhEeS0IIZdYLJbDw" value="new JLabel(&quot;Hello&quot;)"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_yVse4jLhEeS0IIZdYLJbDw" name="btnSetInput" visibility="private" isLeaf="true" type="_eJvjQDF-EeSCi4Q5FKcbkA" isReadOnly="true" association="_yV-ywTLhEeS0IIZdYLJbDw">
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVse4zLhEeS0IIZdYLJbDw" value="new JButton(&quot;Click&quot;)"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVse4zLhEeS0IIZdYLJbDw" value="new JButton(&quot;Click To Change Text&quot;)"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_yVtF8TLhEeS0IIZdYLJbDw" name="txtNorth" visibility="private" isLeaf="true" type="_eJxYcTF-EeSCi4Q5FKcbkA" isReadOnly="true" association="_yV_Z0TLhEeS0IIZdYLJbDw">
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVtF8jLhEeS0IIZdYLJbDw" value="new JTextField()"/>
@@ -127,7 +135,7 @@
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_yVzzoDLhEeS0IIZdYLJbDw" value="new JLabel(String.format(&quot;(%d, %d)&quot;, shapePosition.x, shapePosition.y))"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_yVzzojLhEeS0IIZdYLJbDw" name="btnSetPosition" visibility="private" isLeaf="true" type="_eJvjQDF-EeSCi4Q5FKcbkA" isReadOnly="true" association="_yWESUTLhEeS0IIZdYLJbDw">
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_yV0asDLhEeS0IIZdYLJbDw" value="new JButton(&quot;Set Position&quot;)"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_yV0asDLhEeS0IIZdYLJbDw" value="new JButton(&quot;Set Shapes Position&quot;)"/>
         </ownedAttribute>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yV1o0DLhEeS0IIZdYLJbDw" name="main" specification="_yVDlsDLhEeS0IIZdYLJbDw">
           <ownedParameter xmi:id="_yV1o0TLhEeS0IIZdYLJbDw" name="args">
@@ -148,7 +156,9 @@
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yV1o0zLhEeS0IIZdYLJbDw" name="MainFrame" specification="_yVEMwDLhEeS0IIZdYLJbDw">
-          <ownedParameter xmi:id="_yV1o1DLhEeS0IIZdYLJbDw" type="_yU-GIDLhEeS0IIZdYLJbDw" direction="return"/>
+          <ownedParameter xmi:id="_yV1o1DLhEeS0IIZdYLJbDw" type="_yU-GIDLhEeS0IIZdYLJbDw" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>initGUI();
 	</body>
@@ -191,6 +201,7 @@
 					// If the input position is valid
 					lblCurrentPosition.setText(String.format(&quot;(%d, %d)&quot;, shapePosition.x, shapePosition.y));
 				}
+				btnFiveRings.doClick();
 			}
 		});
 		
@@ -205,13 +216,9 @@
 		northPanel.add(lblInput);
 		btnSetInput.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/**
-				 * Get the input text
-				 */
+				//Get the input text
 				String inputText = txtNorth.getText();
-				/**
-				 * Set the label to the same as the input text
-				 */
+				//Set the label to the same as the input text
 				lblInput.setText(inputText);
 			}
 		});
@@ -235,9 +242,8 @@
 				// The radius of each ring
 				int radius = 30;
 				
-				/**
-				 * Building the Olympic rings
-				 */
+
+				 //Building the Olympic rings
 				AShape blueCircle = new Circle(base, radius, Color.BLUE);
 				AShape blackCircle = new Circle(new Point(base.x + 40, base.y), radius, Color.BLACK);
 				AShape combo = new CompositeShape(blueCircle, blackCircle);
@@ -251,9 +257,7 @@
 				AShape greenCircle = new Circle(new Point(base.x + 60, base.y + 15), radius, Color.GREEN);
 				AShape combo4 = new CompositeShape(greenCircle, combo3);
 				
-				/**
-				 * Add Olympic rings to the shapes and paint them on the panel
-				 */
+				//Add Olympic rings to the shapes and paint them on the panel
 				shapeToPaint = combo4;
 				centerPanel.repaint();
 			}
@@ -304,8 +308,16 @@
           </ownedComment>
           <ownedParameter xmi:id="_yVEMwzLhEeS0IIZdYLJbDw" type="_yU-GIDLhEeS0IIZdYLJbDw" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_yVEz0DLhEeS0IIZdYLJbDw" name="initGUI" visibility="private" method="_yV2P4DLhEeS0IIZdYLJbDw"/>
-        <ownedOperation xmi:id="_yVEz0TLhEeS0IIZdYLJbDw" name="start" visibility="private" method="_yV2P4TLhEeS0IIZdYLJbDw"/>
+        <ownedOperation xmi:id="_yVEz0DLhEeS0IIZdYLJbDw" name="initGUI" visibility="private" method="_yV2P4DLhEeS0IIZdYLJbDw">
+          <ownedComment xmi:id="_yMamEDLsEeS7BJVD35WQmg">
+            <body>Initialization function</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_yVEz0TLhEeS0IIZdYLJbDw" name="start" visibility="private" method="_yV2P4TLhEeS0IIZdYLJbDw">
+          <ownedComment xmi:id="_4MGbIDLtEeS7BJVD35WQmg">
+            <body>Frame startup function</body>
+          </ownedComment>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_yV6hUDLhEeS0IIZdYLJbDw" name="" memberEnd="_yV6hUTLhEeS0IIZdYLJbDw _yVo0gDLhEeS0IIZdYLJbDw">
         <ownedEnd xmi:id="_yV6hUTLhEeS0IIZdYLJbDw" name="" type="_yU-GIDLhEeS0IIZdYLJbDw" association="_yV6hUDLhEeS0IIZdYLJbDw"/>
@@ -414,7 +426,9 @@
           <ownedComment xmi:id="_6Fm9cDLMEeS5gJ-RjcMmHw">
             <body>Constructor
 	 * @param shapeA the first AShape object
-	 * @param shapeB the second AShape object</body>
+	 * @param shapeB the second AShape object
+	 * @param location the shape's location on the frame
+	 * @param color the color of the shape</body>
           </ownedComment>
           <ownedParameter xmi:id="_YzbVszIJEeS5fbfSURRPSg" type="_4uLOUDH5EeSuROfQnRLojw" direction="return"/>
           <ownedParameter xmi:id="_4u18sDH5EeSuROfQnRLojw" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
@@ -460,7 +474,9 @@
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mqyW8DLhEeS0IIZdYLJbDw" name="AShape" specification="_mqs3YDLhEeS0IIZdYLJbDw">
           <ownedParameter xmi:id="_mqyW8TLhEeS0IIZdYLJbDw" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_mqyW8jLhEeS0IIZdYLJbDw" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
-          <ownedParameter xmi:id="_mqyW8zLhEeS0IIZdYLJbDw" type="_1csX8DLUEeSTYuO-F-ErDA" direction="return"/>
+          <ownedParameter xmi:id="_mqyW8zLhEeS0IIZdYLJbDw" type="_1csX8DLUEeSTYuO-F-ErDA" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.location = location;
 		this.color = color;
@@ -503,7 +519,9 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_pUKM9DLhEeS0IIZdYLJbDw" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
-          <ownedParameter xmi:id="_pUKM9TLhEeS0IIZdYLJbDw" type="_pT6VUDLhEeS0IIZdYLJbDw" direction="return"/>
+          <ownedParameter xmi:id="_pUKM9TLhEeS0IIZdYLJbDw" type="_pT6VUDLhEeS0IIZdYLJbDw" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>super(location, color);
 		this.radius = radius;
@@ -553,7 +571,9 @@
           <ownedParameter xmi:id="_sTedwTLhEeS0IIZdYLJbDw" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_sTedwjLhEeS0IIZdYLJbDw" name="size" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_sTedwzLhEeS0IIZdYLJbDw" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
-          <ownedParameter xmi:id="_sTedxDLhEeS0IIZdYLJbDw" type="_sTRpcDLhEeS0IIZdYLJbDw" direction="return"/>
+          <ownedParameter xmi:id="_sTedxDLhEeS0IIZdYLJbDw" type="_sTRpcDLhEeS0IIZdYLJbDw" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>super(location, color);
 		this.size = size;
@@ -604,7 +624,9 @@
           <ownedParameter xmi:id="_u_v2wTLhEeS0IIZdYLJbDw" name="location" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_u_v2wjLhEeS0IIZdYLJbDw" name="size" type="_SywjQDGGEeSCi4Q5FKcbkA"/>
           <ownedParameter xmi:id="_u_v2wzLhEeS0IIZdYLJbDw" name="color" type="_eJtuETF-EeSCi4Q5FKcbkA"/>
-          <ownedParameter xmi:id="_u_v2xDLhEeS0IIZdYLJbDw" type="_u_exADLhEeS0IIZdYLJbDw" direction="return"/>
+          <ownedParameter xmi:id="_u_v2xDLhEeS0IIZdYLJbDw" type="_u_exADLhEeS0IIZdYLJbDw" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>super(location, color);
 		this.size = size;
@@ -731,4 +753,5 @@
   <UMLLabProfile:Reference xmi:id="_yWDrQDLhEeS0IIZdYLJbDw" base_Element="_yWDEMTLhEeS0IIZdYLJbDw"/>
   <UMLLabProfile:Reference xmi:id="_yWESUDLhEeS0IIZdYLJbDw" base_Element="_yWDrQTLhEeS0IIZdYLJbDw"/>
   <UMLLabProfile:Reference xmi:id="_yWE5YDLhEeS0IIZdYLJbDw" base_Element="_yWESUTLhEeS0IIZdYLJbDw"/>
+  <UMLLabProfile:Array xmi:id="_L8tmQDLrEeS7BJVD35WQmg" base_Element="_yVDlsTLhEeS0IIZdYLJbDw"/>
 </xmi:XMI>
