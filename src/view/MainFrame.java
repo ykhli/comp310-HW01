@@ -73,7 +73,7 @@ public class MainFrame extends JFrame {
 	private final JButton btnCircle = new JButton("Circle");
 	private final JButton btnOval = new JButton("Oval");
 	private final JTextField txtPosition = new JTextField();
-	private final JLabel lblCurrentPosition = new JLabel("(150, 150)");
+	private final JLabel lblCurrentPosition = new JLabel(String.format("(%d, %d)", shapePosition.x, shapePosition.y));
 	private final JButton btnSetPosition = new JButton("Set Position");
 
 	/**
