@@ -74,7 +74,7 @@ public class MainFrame extends JFrame {
 	private final JButton btnOval = new JButton("Oval");
 	private final JTextField txtPosition = new JTextField();
 	private final JLabel lblCurrentPosition = new JLabel("(150, 150)");
-	private final JButton btnNewButton = new JButton("Set Position");
+	private final JButton btnSetPosition = new JButton("Set Position");
 
 	/**
 	 * Launch the application.
@@ -116,7 +116,7 @@ public class MainFrame extends JFrame {
 		centerPanel.add(txtPosition);
 		
 		centerPanel.add(lblCurrentPosition);
-		btnNewButton.addActionListener(new ActionListener() {
+		btnSetPosition.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Get the input position
 				String positionInput = txtPosition.getText();
@@ -138,7 +138,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 		
-		centerPanel.add(btnNewButton);
+		centerPanel.add(btnSetPosition);
 		northPanel.setBackground(Color.BLACK);
 		
 		contentPane.add(northPanel, BorderLayout.NORTH);
