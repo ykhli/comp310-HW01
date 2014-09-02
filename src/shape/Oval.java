@@ -31,6 +31,6 @@ public class Oval extends AShape{
 		 */
 		Point loc = super.getLocation();
 		g.setColor(super.getColor());
-		g.drawOval(loc.x, loc.y, size.x, size.y);
+		g.fillOval(loc.x, loc.y, size.x, size.y);
 	}
 }

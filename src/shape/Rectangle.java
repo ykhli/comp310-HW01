@@ -29,6 +29,6 @@ public class Rectangle extends AShape {
 		 */
 		Point loc = super.getLocation();
 		g.setColor(super.getColor());
-		g.drawRect(loc.x, loc.y, size.x, size.y);
+		g.fillRect(loc.x, loc.y, size.x, size.y);
 	}
 }

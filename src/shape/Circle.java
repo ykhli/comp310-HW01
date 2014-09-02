@@ -31,6 +31,6 @@ public class Circle extends AShape {
 		 */
 		Point loc = super.getLocation();
 		g.setColor(super.getColor());
-		g.drawOval(loc.x, loc.y, radius, radius);
+		g.fillOval(loc.x, loc.y, radius, radius);
 	}
 }

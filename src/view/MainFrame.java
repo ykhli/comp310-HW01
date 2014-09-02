@@ -16,27 +16,20 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
 
 import javax.swing.JTextField;
 
 import shape.AShape;
 import shape.Circle;
 import shape.CompositeShape;
+import shape.Oval;
 import shape.Rectangle;
 
 public class MainFrame extends JFrame {
 	/**
 	 * shapesToPaint contains all the shapes to be painted
 	 */
-	private ArrayList<AShape> shapesToPaint = new ArrayList<AShape>() {
-		private static final long serialVersionUID = -5115571127496690007L;
-	{
-		/**
-		 * Initialize a circle to paint
-		 */
-		add(new Circle(new Point(150, 150), 20, Color.BLUE));
-	}};
+	private AShape shapeToPaint = new Circle(new Point(150, 150), 20, Color.BLUE);
 	private static final long serialVersionUID = 6609680027612102654L;
 	private JPanel contentPane;
 	private final JPanel centerPanel = new JPanel(){
@@ -63,9 +56,7 @@ public class MainFrame extends JFrame {
 			/**
 			 * Paint all shapes
 			 */
-		    for(AShape shape: shapesToPaint) {
-		    	shape.paint(g);
-		    }
+		    shapeToPaint.paint(g);
 		}
 	};
 	private final JPanel northPanel = new JPanel();
@@ -73,8 +64,10 @@ public class MainFrame extends JFrame {
 	private final JButton northButton = new JButton("Click");
 	private final JTextField northTextField = new JTextField();
 	private final JPanel southPanel = new JPanel();
-	private final JButton btnChangeRect = new JButton("Change to Rectangle");
-	private final JButton btnShowCompositeShape = new JButton("Show Composite Shape");
+	private final JButton btnRectangle = new JButton("Rectangle");
+	private final JButton btnFiveRings = new JButton("5 Rings");
+	private final JButton btnCircle = new JButton("Circle");
+	private final JButton btnOval = new JButton("Oval");
 
 	/**
 	 * Launch the application.
@@ -135,42 +128,63 @@ public class MainFrame extends JFrame {
 		southPanel.setBackground(Color.BLACK);
 		
 		contentPane.add(southPanel, BorderLayout.SOUTH);
-		btnChangeRect.addActionListener(new ActionListener() {
+		btnRectangle.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Substitute the circle with a rectangle and repaint
-				AShape someShape = new Rectangle(new Point(150, 150), new Point(20, 30), Color.CYAN);
-				shapesToPaint.set(0, someShape);
+				shapeToPaint = new Rectangle(new Point(150, 150), new Point(20, 30), Color.CYAN);
 				centerPanel.repaint();
 			}
 		});
-		btnShowCompositeShape.addActionListener(new ActionListener() {
+		btnFiveRings.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				/**
 				 * Building the Olympic rings
 				 */
-				AShape blueCircle = new Circle(new Point(0,0), 30, Color.BLUE);
-				AShape blackCircle = new Circle(new Point(40,0), 30, Color.BLACK);
+				
+				// The absolute location of the rings
+				Point base = new Point(150, 150);
+				// The radius of each ring
+				int radius = 30;
+				
+				AShape blueCircle = new Circle(base, radius, Color.BLUE);
+				AShape blackCircle = new Circle(new Point(base.x + 40, base.y), radius, Color.BLACK);
 				AShape combo = new CompositeShape(blueCircle, blackCircle);
 				
-				AShape redCircle = new Circle(new Point(80,0), 30, Color.RED);
+				AShape redCircle = new Circle(new Point(base.x + 80, base.y), radius, Color.RED);
 				AShape combo2 = new CompositeShape(redCircle, combo);
 				
-				AShape yellowCircle = new Circle(new Point(20,15), 30, Color.YELLOW);
+				AShape yellowCircle = new Circle(new Point(base.x + 20, base.y + 15), radius, Color.YELLOW);
 				AShape combo3 = new CompositeShape(yellowCircle, combo2);
 				
-				AShape greenCircle = new Circle(new Point(60,15), 30, Color.GREEN);
+				AShape greenCircle = new Circle(new Point(base.x + 60, base.y + 15), radius, Color.GREEN);
 				AShape combo4 = new CompositeShape(greenCircle, combo3);
 				
 				/**
 				 * Add Olympic rings to the shapes and paint them on the panel
 				 */
-				shapesToPaint.add(combo4);
+				shapeToPaint = combo4;
 				centerPanel.repaint();
 			}
 		});
 		
-		southPanel.add(btnShowCompositeShape);
-		southPanel.add(btnChangeRect);
+		southPanel.add(btnFiveRings);
+		btnCircle.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				shapeToPaint = new Circle(new Point(150, 150), 20, Color.BLUE);
+				centerPanel.repaint();
+			}
+		});
+		
+		southPanel.add(btnCircle);
+		southPanel.add(btnRectangle);
+		btnOval.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				shapeToPaint = new Oval(new Point(150, 150), new Point(40, 20), Color.green);
+				centerPanel.repaint();
+			}
+		});
+		
+		southPanel.add(btnOval);
 	}
 
 	private void start(){
