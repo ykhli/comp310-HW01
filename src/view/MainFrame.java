@@ -30,6 +30,10 @@ public class MainFrame extends JFrame {
 	 * shapesToPaint contains all the shapes to be painted
 	 */
 	private AShape shapeToPaint = new Circle(new Point(150, 150), 20, Color.BLUE);
+	/**
+	 * The position of the shape to paint
+	 */
+	private Point shapePosition = new Point(150, 150);
 	private static final long serialVersionUID = 6609680027612102654L;
 	private JPanel contentPane;
 	private final JPanel centerPanel = new JPanel(){
@@ -60,14 +64,17 @@ public class MainFrame extends JFrame {
 		}
 	};
 	private final JPanel northPanel = new JPanel();
-	private final JLabel northLabel = new JLabel("What up");
-	private final JButton northButton = new JButton("Click");
-	private final JTextField northTextField = new JTextField();
+	private final JLabel lblInput = new JLabel("Hello");
+	private final JButton btnSetInput = new JButton("Click");
+	private final JTextField txtNorth = new JTextField();
 	private final JPanel southPanel = new JPanel();
 	private final JButton btnRectangle = new JButton("Rectangle");
 	private final JButton btnFiveRings = new JButton("5 Rings");
 	private final JButton btnCircle = new JButton("Circle");
 	private final JButton btnOval = new JButton("Oval");
+	private final JTextField txtPosition = new JTextField();
+	private final JLabel lblCurrentPosition = new JLabel("(150, 150)");
+	private final JButton btnNewButton = new JButton("Set Position");
 
 	/**
 	 * Launch the application.
@@ -89,10 +96,12 @@ public class MainFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public MainFrame() {
-		northTextField.setColumns(10);
 		initGUI();
 	}
 	private void initGUI() {
+		txtPosition.setText("e.g. \"20 30\"");
+		txtPosition.setColumns(10);
+		txtNorth.setColumns(10);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -103,49 +112,76 @@ public class MainFrame extends JFrame {
 		centerPanel.setBackground(Color.ORANGE);
 		
 		contentPane.add(centerPanel, BorderLayout.CENTER);
+		
+		centerPanel.add(txtPosition);
+		
+		centerPanel.add(lblCurrentPosition);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Get the input position
+				String positionInput = txtPosition.getText();
+				// Process the input position and set it up
+				String[] positionValues = positionInput.split("\\s+");
+				if(positionValues.length != 2){
+					lblCurrentPosition.setText("Invalid input");
+					return;
+				}else{
+					try{
+						shapePosition.setLocation(Integer.parseInt(positionValues[0]), Integer.parseInt(positionValues[1]));
+					}catch(Exception ex){
+						lblCurrentPosition.setText("Invalid input");
+						return;
+					}
+					// If the input position is valid
+					lblCurrentPosition.setText(String.format("(%d, %d)", shapePosition.x, shapePosition.y));
+				}
+			}
+		});
+		
+		centerPanel.add(btnNewButton);
 		northPanel.setBackground(Color.BLACK);
 		
 		contentPane.add(northPanel, BorderLayout.NORTH);
 		
-		northPanel.add(northTextField);
-		northLabel.setForeground(Color.WHITE);
+		northPanel.add(txtNorth);
+		lblInput.setForeground(Color.WHITE);
 		
-		northPanel.add(northLabel);
-		northButton.addActionListener(new ActionListener() {
+		northPanel.add(lblInput);
+		btnSetInput.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				/**
 				 * Get the input text
 				 */
-				String inputText = northTextField.getText();
+				String inputText = txtNorth.getText();
 				/**
 				 * Set the label to the same as the input text
 				 */
-				northLabel.setText(inputText);
+				lblInput.setText(inputText);
 			}
 		});
 		
-		northPanel.add(northButton);
+		northPanel.add(btnSetInput);
 		southPanel.setBackground(Color.BLACK);
 		
 		contentPane.add(southPanel, BorderLayout.SOUTH);
 		btnRectangle.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Substitute the circle with a rectangle and repaint
-				shapeToPaint = new Rectangle(new Point(150, 150), new Point(20, 30), Color.CYAN);
+				shapeToPaint = new Rectangle(shapePosition, new Point(20, 30), Color.CYAN);
 				centerPanel.repaint();
 			}
 		});
 		btnFiveRings.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/**
-				 * Building the Olympic rings
-				 */
-				
+
 				// The absolute location of the rings
-				Point base = new Point(150, 150);
+				Point base = shapePosition;
 				// The radius of each ring
 				int radius = 30;
 				
+				/**
+				 * Building the Olympic rings
+				 */
 				AShape blueCircle = new Circle(base, radius, Color.BLUE);
 				AShape blackCircle = new Circle(new Point(base.x + 40, base.y), radius, Color.BLACK);
 				AShape combo = new CompositeShape(blueCircle, blackCircle);
@@ -170,7 +206,8 @@ public class MainFrame extends JFrame {
 		southPanel.add(btnFiveRings);
 		btnCircle.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				shapeToPaint = new Circle(new Point(150, 150), 20, Color.BLUE);
+				// Substitute the shape to paint with a circle and repaint the center panel
+				shapeToPaint = new Circle(shapePosition, 20, Color.BLUE);
 				centerPanel.repaint();
 			}
 		});
@@ -179,7 +216,8 @@ public class MainFrame extends JFrame {
 		southPanel.add(btnRectangle);
 		btnOval.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				shapeToPaint = new Oval(new Point(150, 150), new Point(40, 20), Color.green);
+				// Substitute the shape to paint with a oval and repaint the center panel
+				shapeToPaint = new Oval(shapePosition, new Point(40, 20), Color.green);
 				centerPanel.repaint();
 			}
 		});
