@@ -16,7 +16,7 @@ Usage
 _____________________
 0. Run the program by clicking "run" on MainFrame.java
 1. Display different shapes
-The user can display circle, rectangle, oval or the Omlypic rings by clicking
+User can display circle, rectangle, oval or the Omlypic rings by clicking
 the corresponding buttons at the bottom of the frame
 2. Change locations of the shapes
 User can change the shapes' locations by inputting coordinates values in the
