@@ -138,7 +138,8 @@ public class MainFrame extends JFrame {
 					// If the input position is valid
 					lblCurrentPosition.setText(String.format("(%d, %d)", shapePosition.x, shapePosition.y));
 				}
-				btnFiveRings.doClick();
+				shapeToPaint.setLocation(shapePosition);
+				centerPanel.repaint();
 			}
 		});
 		

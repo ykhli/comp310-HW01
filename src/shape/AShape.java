@@ -26,6 +26,14 @@ public abstract class AShape {
 	}
 	
 	/**
+	 * Set the location of the shape
+	 * @param location the new location
+	 */
+	public void setLocation(Point location) {
+		this.location = location;
+	}
+	
+	/**
 	 * Color getter
 	 * @return the color of the shape
 	 */
